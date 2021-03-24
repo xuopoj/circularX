@@ -41,8 +41,12 @@ function early(now, eightInEpoch, humanReadable){
 
   const countdown = millisecondsToHumanReadable(timeToEight);
   console.log(`its ${humanReadable}, ${countdown} to 8, try it later`);
+  let randomWait = 5 + Math.random() * 5;
+  console.log(`let's try to wait for ${randomWait}s`)
   console.log('\n');
-  $done({});
+  setTimeout(()=>{
+    $done({});
+  }, randomWait*1000)
 }
 
 function timeForBig(now, eightInEpoch, humanReadable){
